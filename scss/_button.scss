@@ -1,0 +1,47 @@
+.dark-mode{
+    //outline: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dark-mode h3{
+    align-self: center;
+    padding-right: 10px;
+}
+
+.darkmode-btn{
+    height: 30px;
+    width: 50px;
+    background: $toggleLight;
+    border-radius: 30px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.inner-circle{
+    position: relative;
+    left: 3px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 25px;
+    height: 25px;
+    background: white;
+    border-radius: 50%;
+    transition: margin 200ms ease-in;
+}
+
+.darkmode-btn.active{
+    background: $toggleDark;
+}
+
+.darkmode-btn.active > .inner-circle{
+    margin-left: 38%;
+}
+
+@media screen and (min-width: 600px){
+
+    .m-b-1{
+        margin-bottom: 0;
+    }
+}

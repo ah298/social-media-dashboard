@@ -1,0 +1,220 @@
+@import 'global';
+
+/* Grid */
+.dashboard-body, .overview-body{
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    margin: auto 1rem;
+}
+
+/* Styles */
+.main-body{
+    max-width: 400px;
+    margin: auto;
+}
+
+.followers{
+    font-size: 2.5rem; //48px
+}
+
+.social-media {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--card-background-color);
+    border-radius: 0.4rem;
+
+    p{
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    }
+}
+
+.icon{
+    display: flex;
+
+    img, h4{
+        padding: 0.3rem ;
+    }
+    img{
+        width: 1.25rem; //20px
+    }
+
+}
+
+.overview-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--card-background-color);
+    border-radius: 0.4rem;
+}
+
+.overview-box p{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.box1,.box2{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.box1 >*, .box2 >*{
+    padding: 0.5rem 0;
+}
+
+.box1{
+    align-items: flex-start;
+}
+
+.box2{
+    align-items: flex-end;
+}
+
+
+/* Border Styles*/
+
+hr{
+    border-top: 1px solid var(--light-text-color);
+}
+
+.fb{
+    border-top: 0.4rem solid $facebook;
+
+}
+
+.tw{
+    border-top: 0.4rem solid $facebook;
+
+}
+
+.ig{
+    border: none;
+    overflow: hidden;
+    position: relative;
+}
+
+.ig::after{
+
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.4rem;
+    background: linear-gradient(to right, $insta1, $insta2);
+    position: absolute;
+
+}
+
+.yt{
+    border-top: 0.4rem solid $youTube;
+
+}
+
+/* Status Styles */
+.green-status{
+    color: $limeGreen;
+}
+
+.red-status{
+    color: $brightRed;
+}
+
+.green-status, .red-status{
+    position: relative;
+}
+
+.green-status::before, .red-status::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -16px;
+    width: 0.8rem;//8px
+    height: 0.45rem;//4px
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.green-status::before{
+    background-image: url('../images/icon-up.svg');
+}
+
+.red-status::before{
+    background-image: url('../images/icon-down.svg');
+}
+
+/* Text Styles*/
+header h3, .dark-mode h3, .dashboard-body p,
+.icon h4, .overview-header h2,
+.box1 h3{
+    color: var(--light-text-color);
+}
+
+header h1, .followers, .box1 p{
+
+    color: var(--dark-text-color);
+}
+
+@media screen and (min-width: 600px){
+
+    hr{
+        display: none;
+    }
+
+    .main-body{
+        max-width: 780px;
+    }
+
+    /* Grid */
+    .dashboard-body, .overview-body{
+
+        grid-template-columns: 1fr 1fr;
+    }
+
+    /* Dark mode button*/
+    header > h3, .dark-mode{
+        display: inline-block;
+    }
+
+    header{
+        position: relative;
+    }
+
+    .dark-mode{
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+}
+
+@media screen and (min-width: 1050px){
+
+    .hide-for-desktop{
+        display: none;
+    }
+
+    body{
+        overflow: hidden;
+    }
+
+    .main-body{
+        max-width: 68.75rem; //1100px
+    }
+
+    /* Grid */
+    .dashboard-body, .overview-body{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+
+@import 'button';
+@import 'animation';
